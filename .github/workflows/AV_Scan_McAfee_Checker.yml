@@ -1,0 +1,11 @@
+name: AV Scan McAfee Checker
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  scan_antivirus_github:
+    uses: intel-innersource/frameworks.actions.pact.virus-scan/.github/workflows/AV_Scan.yml@v1.0.0
+    with:
+      REPOSITORY_URL: ${{ github.repository }}
+      AV_RAPORTNAME: 'bkms-av-scan'
